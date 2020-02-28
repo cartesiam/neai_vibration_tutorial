@@ -14,7 +14,6 @@
 extern "C" {
 	void NanoEdgeAI_initialize(void);
 	uint8_t NanoEdgeAI_learn(float data_input[]);
-	uint8_t NanoEdgeAI_get_learning_progress();
 	uint8_t NanoEdgeAI_detect(float data_input[]);
 	void NanoEdgeAI_set_sensitivity(float sensitivity);
 	float NanoEdgeAI_get_sensitivity(void);

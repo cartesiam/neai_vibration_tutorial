@@ -178,7 +178,7 @@ void neai_library_test_mode()
 			/* Learning process for one speed */
 			for (uint16_t i = 0; i < LEARNING_NUMBER; i++) {
 				fill_acc_buffer();
-				similarity = NanoEdgeAI_learn(acc_buffer);
+				NanoEdgeAI_learn(acc_buffer);
 				pc.printf("%d\n", (int)(learn_cpt * 100) / LEARNING_NUMBER);
 				learn_cpt++;
 			}
