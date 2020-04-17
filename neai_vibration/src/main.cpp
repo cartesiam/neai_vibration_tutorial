@@ -123,7 +123,7 @@ void data_logging_mode()
 			toggle_led_ticker.attach(&toggle_led, 0.1);
 
 			/* Wait one seconds before launching logging process */
-			thread_sleep_for(1000);
+			wait_ms(1000);
 
 			/* Logging process */
 			for (uint8_t ilog = 0; ilog < LOG_NUMBER; ilog++) {
@@ -173,7 +173,7 @@ void neai_library_test_mode()
 	while (learn_cpt < LEARNING_NUMBER) {
 		if (mybutton == 0) {
 			/* Wait one seconds before starting learning process */
-			thread_sleep_for(1000);
+			wait_ms(1000);
 
 			/* Learning process for one speed */
 			for (uint16_t i = 0; i < LEARNING_NUMBER; i++) {
@@ -226,13 +226,13 @@ void init()
 void init_bmi160()
 {
 	imu.setSensorPowerMode(BMI160::ACC, BMI160::NORMAL);
-	thread_sleep_for(10);
+	wait_ms(10);
 	accConfig.range = BMI160::SENS_2G; /* Accelerometer range +-2G */
 	accConfig.us = BMI160::ACC_US_OFF;
 	accConfig.bwp = BMI160::ACC_BWP_2;
 	accConfig.odr = BMI160::ACC_ODR_11; /* Accelerometer output data rate < 800Hz */
 	imu.setSensorConfig(accConfig);
-	thread_sleep_for(100);
+	wait_ms(100);
 }
 
 /**
